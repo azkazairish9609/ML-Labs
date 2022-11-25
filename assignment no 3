@@ -1,0 +1,18 @@
+from sklearn.feature_extraction.text import CountVectorizer
+
+document = ["If we are increasing number of machines then we don't need to buy new channel. We can use existing channel logically"]
+
+# Create a Vectorizer Object
+vectorizer = CountVectorizer()
+
+vectorizer.fit(document)
+
+# Printing the identified Unique words along with their indices
+print("Vocabulary: ", vectorizer.vocabulary_)
+
+# Encode the Document
+vector = vectorizer.transform(document)
+
+# Summarizing the Encoded Texts
+print("Encoded Document is:")
+print(vector.toarray())
